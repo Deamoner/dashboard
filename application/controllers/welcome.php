@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->content = $this->load->view('welcome_message',null,true);
-		$this->title = "Home Page";			
+		$this->title = "Home Page";		
 	}
 }
 

@@ -8,9 +8,13 @@
 	<script type="text/javascript" src="Vendors/bootstrap/js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="Vendors/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+	<!-- Additional header sections will go here -->
+	<?php echo $headers; ?>
+
 </head>
 <body>
-	<div id="container">
+	<div class="container">
 		<?php echo $content; ?>		
 	</div>
 </body>

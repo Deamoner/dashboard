@@ -11,7 +11,7 @@ class MasterViewPostFilter
 	public function LoadMasterView()
 	{
 		$CI =& get_instance();
-		$CI->load->view("master_view", array('content' => $CI->content, 'title' => $CI->title));
+		$CI->load->view("master_view", array('content' => $CI->content, 'title' => $CI->title, 'headers' => $CI->headers));
 	} 
 }
 

@@ -1,17 +1,55 @@
-<div id="content">
+<div id="content" ng-app='DashboardHomeApp' ng-controller='HomeCtrl' >
 	<h1>Welcome to Dashboard!</h1>
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+		<pre>Please login and continue to the dashboard.</pre>
+		<hr>
+		<pre> Thank <strong>{{name}}</strong> you for comming back
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
+			<form method="POST" action="account/check">
+				<input type="text" name="username" ng-model="name" placeholder="Username"/>	
+				<input type="password" name="password" placeholder="Password">
+				<input type="submit" ng-click="validate()" class="btn" valus="Login">
+			</form>
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+			<div class="alert alert-error">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{{error}}
+
+			</div>
+		</pre>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
+
+<script type="text/javascript">
+
+var DashboardModule = angular.module('DashboardHomeApp', []);
+
+///HOME CONTROLLER FOR HOME PAGE MODULE
+DashboardModule.controller('HomeCtrl',function($scope){
+
+	//Validate the form
+	$scope.validate = function()
+	{
+		if($scope.name == undefined || $scope.name == '')
+		{
+			$scope.error = 'Hey man type in a name atleast.';
+			return false;
+		}
+		else
+		{	
+			$scope.error = '';
+			return true;
+		}
+	}
+
+	//Scope variables
+	$scope.greeting = 'hola';
+
+});
+
+
+</script>

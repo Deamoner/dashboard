@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['account/check'] = ($_SERVER['REQUEST_METHOD'] == 'POST') ? "account/checklogin" : "account/checklogin";
+
 
 
 /* End of file routes.php */
