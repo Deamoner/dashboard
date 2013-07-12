@@ -7,10 +7,10 @@
 		<hr>
 		<pre> Thank <strong>{{name}}</strong> you for comming back
 
-			<form method="POST" action="account/check">
+			<form method="POST" ng-submit="validate()" action="account/check">
 				<input type="text" name="username" ng-model="name" placeholder="Username"/>	
 				<input type="password" name="password" placeholder="Password">
-				<input type="submit" ng-click="validate()" class="btn" valus="Login">
+				<input type="submit" class="btn" value="Login">
 			</form>
 
 			<div class="alert alert-error">
@@ -39,11 +39,8 @@ DashboardModule.controller('HomeCtrl',function($scope){
 			$scope.error = 'Hey man type in a name atleast.';
 			return false;
 		}
-		else
-		{	
-			$scope.error = '';
-			return true;
-		}
+		$scope.error = '';
+		return true;		
 	}
 
 	//Scope variables

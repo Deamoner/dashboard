@@ -18,6 +18,12 @@ $hook['post_controller'] = array(
 									'filepath' => 'hooks'
 								);
 
+$hook['post_controller_constructor'] = array(
+									'class' => 'SessionFilter', 
+									'function' => 'IsLoggedIn',
+									'filename' =>'SessionFilter.php',
+									'filepath' => 'hooks'
+								);
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
